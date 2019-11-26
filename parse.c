@@ -16,9 +16,10 @@ char ** parse_args( char * line ) {
     return args;
 }
 int main() {
-    char line[100] = "ls -a -l";
+    char line[100] = "ls -a -l -G";
     char *s1 = line;
     char ** args = parse_args(s1);
+    printf("Trying \"ls -a -l -G\": \n");
     execvp("ls", args);
     return 0;
 }
